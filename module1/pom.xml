@@ -16,6 +16,28 @@
   <properties>
     <sonar.coverage.jacoco.xmlReportPaths>${basedir}/../${aggregate.report.dir}</sonar.coverage.jacoco.xmlReportPaths>
   </properties>
+  <build>
+  <plugins>
+        <plugin>
+        <groupId>org.pitest</groupId>
+        <artifactId>pitest-maven</artifactId>
+        <version>1.5.1</version>
+        <configuration>
+          <maxMutationsPerClass>25</maxMutationsPerClass>
+          <targetClasses>
 
+            <param>art.Main</param>
+
+          </targetClasses>
+          <targetTests>
+
+            <param>art.MainTest</param>
+
+
+          </targetTests>
+        </configuration>
+      </plugin>
+  </plugins>
+  </build>
 
 </project>
